@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <script>
+
+            /*
+                 AppID (Test):898109316910117
+                 URL (Test): http://localhost:63342/FbProfileSearch/index.html
+
+                 AppID (AWS):897366996984349
+                 URL (AWS): http://elasticbeanstalk-us-west-2-654249651191.s3-website-us-west-2.amazonaws.com/
+             */
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId      : '897366996984349',
+                    xfbml      : true,
+                    version    : 'v2.5'
+                });
+            };
+
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div class="header">
+            <button id="login-fb-button" >Login with Facebook</button>
+            <input id="search-text" type="text" placeholder="Search Facebook" disabled="disabled"/>
+            <span id="login-warning-text">Please click on "Login with Facebook" button to start....</span>
+        </div>
+
+        <div id="loading" style="display: none">
+            Finding Result!!!
+            <img src="loading.gif">
+        </div>
+        <div id="search-display-panel" class="" style=""></div>
+    </body>
+
+    <script src="index.js"></script>
+</html>
